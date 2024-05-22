@@ -37,5 +37,9 @@ shape = SubResource("RectangleShape2D_4cswl")
 
 [node name="HUD" parent="." instance=ExtResource("3_nscir")]
 
+[connection signal="game_over" from="Ball" to="Player" method="_on_ball_game_over"]
+[connection signal="game_over" from="Ball" to="Player2" method="_on_ball_game_over"]
 [connection signal="game_over" from="Ball" to="HUD" method="game_over"]
 [connection signal="start_game" from="HUD" to="Ball" method="start"]
+[connection signal="start_game" from="HUD" to="Player" method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="Player2" method="_on_hud_start_game"]

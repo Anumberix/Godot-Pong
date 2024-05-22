@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var speed: float
+var game_running: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,11 +10,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var verticalInput = Input.get_axis("up", "down")
-	#move_and_collide(Vector2(0, verticalInput * speed))
-	move_local_y(verticalInput * delta * speed)
 	
+	var verticalInput = Input.get_axis("up", "down")
+	
+	if (game_running):
+		move_local_y(verticalInput * delta * speed)
+
 	if (position.y > 550):
 		position.y = 550
 	if (position.y < 95):
 		position.y = 95
+
+
+func _on_ball_game_over():
+	game_running = false
+
+
+func _on_hud_start_game():
+	game_running = true
