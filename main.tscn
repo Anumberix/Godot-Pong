@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d18idwx0fs5o4"]
+[gd_scene load_steps=5 format=3 uid="uid://d18idwx0fs5o4"]
 
 [ext_resource type="PackedScene" uid="uid://b2pgl6wq2uab3" path="res://ball.tscn" id="1_bx0cs"]
 [ext_resource type="PackedScene" uid="uid://c4b44c2eegeqn" path="res://player.tscn" id="2_umwcb"]
+[ext_resource type="PackedScene" uid="uid://d4c64xkt5edlu" path="res://hud.tscn" id="3_nscir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cswl"]
 size = Vector2(191.071, 20)
@@ -34,22 +35,7 @@ position = Vector2(5.14703, 0)
 scale = Vector2(1.81176, 1)
 shape = SubResource("RectangleShape2D_4cswl")
 
-[node name="Floor3" type="StaticBody2D" parent="."]
-position = Vector2(-5.99994, 228)
-rotation = -1.57079
-scale = Vector2(3.4, 1)
+[node name="HUD" parent="." instance=ExtResource("3_nscir")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-position = Vector2(5.14703, 0)
-scale = Vector2(1.81176, 1)
-shape = SubResource("RectangleShape2D_4cswl")
-
-[node name="Floor4" type="StaticBody2D" parent="."]
-position = Vector2(1150, 307)
-rotation = -1.57079
-scale = Vector2(3.4, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
-position = Vector2(5.14703, 0)
-scale = Vector2(1.81176, 1)
-shape = SubResource("RectangleShape2D_4cswl")
+[connection signal="game_over" from="Ball" to="HUD" method="game_over"]
+[connection signal="start_game" from="HUD" to="Ball" method="start"]
