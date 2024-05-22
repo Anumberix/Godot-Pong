@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://d18idwx0fs5o4"]
+
+[ext_resource type="PackedScene" uid="uid://b2pgl6wq2uab3" path="res://ball.tscn" id="1_bx0cs"]
+[ext_resource type="PackedScene" uid="uid://c4b44c2eegeqn" path="res://player.tscn" id="2_umwcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cswl"]
+size = Vector2(191.071, 20)
+
+[node name="Main" type="Node"]
+
+[node name="Ball" parent="." instance=ExtResource("1_bx0cs")]
+
+[node name="Player" parent="." instance=ExtResource("2_umwcb")]
+position = Vector2(1001, 304)
+
+[node name="Player2" parent="." instance=ExtResource("2_umwcb")]
+position = Vector2(99, 303)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(555, 649)
+scale = Vector2(3.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(5.14703, 0)
+scale = Vector2(1.81176, 1)
+shape = SubResource("RectangleShape2D_4cswl")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(555, 1.00006)
+scale = Vector2(3.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2(5.14703, 0)
+scale = Vector2(1.81176, 1)
+shape = SubResource("RectangleShape2D_4cswl")
+
+[node name="Floor3" type="StaticBody2D" parent="."]
+position = Vector2(-5.99994, 228)
+rotation = -1.57079
+scale = Vector2(3.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+position = Vector2(5.14703, 0)
+scale = Vector2(1.81176, 1)
+shape = SubResource("RectangleShape2D_4cswl")
+
+[node name="Floor4" type="StaticBody2D" parent="."]
+position = Vector2(1150, 307)
+rotation = -1.57079
+scale = Vector2(3.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+position = Vector2(5.14703, 0)
+scale = Vector2(1.81176, 1)
+shape = SubResource("RectangleShape2D_4cswl")
