@@ -9,10 +9,11 @@ var startPos
 func _ready():
 	hide()
 	startPos = position
-	speed = randi_range(200, 600)
+	speed = randi_range(400, 600)
 	angle = randf_range(-0.9,0.9)
-	pass
-
+	while (angle > -0.2 && angle < 0.2):
+		angle = randf_range(-0.9,0.9)
+		
 func _process(delta):
 	if ((position.x > get_viewport_rect().size.x || position.x < 0) && !game_over_bool):
 		game_over_bool = true
@@ -29,7 +30,7 @@ func start():
 
 
 func _on_speed_increase_timer_timeout():
-	linear_velocity *= 1.01
+	linear_velocity *= 1.02
 
 
 #func _on_visible_on_screen_notifier_2d_screen_exited():

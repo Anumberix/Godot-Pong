@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d4c64xkt5edlu" path="res://hud.tscn" id="3_nscir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cswl"]
-size = Vector2(191.071, 20)
+size = Vector2(191.071, 67.0001)
 
 [node name="Main" type="Node"]
 
@@ -13,6 +13,7 @@ size = Vector2(191.071, 20)
 
 [node name="Player" parent="." instance=ExtResource("2_umwcb")]
 position = Vector2(1001, 304)
+scale = Vector2(-1, -1)
 
 [node name="Player2" parent="." instance=ExtResource("2_umwcb")]
 position = Vector2(99, 303)
@@ -22,7 +23,7 @@ position = Vector2(555, 649)
 scale = Vector2(3.4, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(5.14703, 0)
+position = Vector2(4.41177, 22)
 scale = Vector2(1.81176, 1)
 shape = SubResource("RectangleShape2D_4cswl")
 
@@ -31,7 +32,7 @@ position = Vector2(555, 1.00006)
 scale = Vector2(3.4, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-position = Vector2(5.14703, 0)
+position = Vector2(5.14702, -23.5)
 scale = Vector2(1.81176, 1)
 shape = SubResource("RectangleShape2D_4cswl")
 

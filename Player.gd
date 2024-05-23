@@ -16,10 +16,10 @@ func _physics_process(delta):
 	if (game_running):
 		move_local_y(verticalInput * delta * speed)
 
-	if (position.y > 550):
-		position.y = 550
-	if (position.y < 95):
-		position.y = 95
+	if (position.y > 600):
+		position.y = 600
+	if (position.y < 50):
+		position.y = 50
 
 
 func _on_ball_game_over():

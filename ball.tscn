@@ -18,18 +18,14 @@ linear_damp_mode = 1
 script = ExtResource("1_8o21f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.35, 0.35)
 shape = SubResource("CircleShape2D_0rtxd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_mkb0q")
 
 [node name="SpeedIncreaseTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-9.17912e-06, 4.97699e-06)
-scale = Vector2(3, 3.1)
-
 [connection signal="timeout" from="SpeedIncreaseTimer" to="." method="_on_speed_increase_timer_timeout"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
